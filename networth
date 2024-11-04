@@ -1,0 +1,9 @@
+#!/bin/bash
+
+code="(progn (networth:main) (quit))"
+
+if [[ "$1" == "-i" ]] ; then
+  code="(in-package :networth)"
+fi
+
+sbcl --userinit init.lisp --sysinit ~/.sbclrc --load networth.fasl --eval "${code}"
