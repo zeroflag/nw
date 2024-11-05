@@ -6,9 +6,8 @@ SBCL = sbcl
 all: $(TARGET)
 
 $(TARGET): $(SRC)
-	$(SBCL) --userinit init.lisp --sysinit ~/.sbclrc --eval '(compile-file "$(SRC)")' --quit
+	$(SBCL) --userinit init.lisp --sysinit ~/.sbclrc --load holdings.lisp --eval '(compile-file "$(SRC)")' --quit
 
-# Clean up generated .fasl file
 clean:
-	rm -f $(TARGET)
+	rm -f *.fasl
 

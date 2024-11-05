@@ -1,6 +1,6 @@
 #!/bin/bash
 
-code="(progn (networth:main) (quit))"
+code="(progn (main) (quit))"
 
 if [[ "$1" == "-i" ]] ; then
   code="(in-package :networth)"
